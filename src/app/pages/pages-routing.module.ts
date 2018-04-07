@@ -31,7 +31,12 @@ const routes: Routes = [{
   }, {
     path: 'tables',
     loadChildren: './tables/tables.module#TablesModule',
-  }, {
+  },
+    {
+    path: 'calendar',
+    loadChildren: './calendar/calendar.module#CalendarModule',
+  },
+    {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
