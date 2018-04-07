@@ -9,7 +9,7 @@ import {
   OnDestroy,
   LOCALE_ID,
   Inject,
-  TemplateRef
+  TemplateRef,
 } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
@@ -18,7 +18,7 @@ import {
   CalendarEvent,
   WeekViewEvent,
   WeekView,
-  ViewPeriod
+  ViewPeriod,
 } from 'calendar-utils';
 import { ResizeEvent } from 'angular-resizable-element';
 import addDays from 'date-fns/add_days/index';
@@ -50,7 +50,7 @@ export interface CalendarWeekViewBeforeRenderEvent {
  * ```
  */
 @Component({
-  selector: 'mwl-calendar-week-view',
+  selector: 'ngx-mwl-calendar-week-view',
   template: `
     <div class="cal-week-view" #weekViewContainer>
       <mwl-calendar-week-view-header
@@ -96,7 +96,7 @@ export interface CalendarWeekViewBeforeRenderEvent {
         </div>
       </div>
     </div>
-  `
+  `,
 })
 export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
   /**
@@ -106,7 +106,8 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
 
   /**
    * An array of events to display on view
-   * The schema is available here: https://github.com/mattlewis92/calendar-utils/blob/c51689985f59a271940e30bc4e2c4e1fee3fcb5c/src/calendarUtils.ts#L49-L63
+   * The schema is available here: https://github.com/mattlewis92/calendar-utils/blob/
+   * c51689985f59a271940e30bc4e2c4e1fee3fcb5c/src/calendarUtils.ts#L49-L63
    */
   @Input() events: CalendarEvent[] = [];
 
@@ -172,7 +173,8 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
   @Input() weekendDays: number[];
 
   /**
-   * Called when a header week day is clicked. Adding a `cssClass` property on `$event.day` will add that class to the header element
+   * Called when a header week day is clicked. Adding a `cssClass` property on `$event.day`
+   * will add that class to the header element
    */
   @Output()
   dayHeaderClicked: EventEmitter<{ day: WeekDay }> = new EventEmitter<{
@@ -197,7 +199,8 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
 
   /**
    * An output that will be called before the view is rendered for the current week.
-   * If you add the `cssClass` property to a day in the header it will add that class to the cell element in the template
+   * If you add the `cssClass` property to a day in the header
+   * it will add that class to the cell element in the template
    */
   @Output()
   beforeViewRender = new EventEmitter<CalendarWeekViewBeforeRenderEvent>();
@@ -254,7 +257,7 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
   constructor(
     private cdr: ChangeDetectorRef,
     private utils: CalendarUtils,
-    @Inject(LOCALE_ID) locale: string
+    @Inject(LOCALE_ID) locale: string,
   ) {
     this.locale = locale;
   }
@@ -303,17 +306,17 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
   resizeStarted(
     weekViewContainer: HTMLElement,
     weekEvent: WeekViewEvent,
-    resizeEvent: ResizeEvent
+    resizeEvent: ResizeEvent,
   ): void {
     this.currentResizes.set(weekEvent, {
       originalOffset: weekEvent.offset,
       originalSpan: weekEvent.span,
-      edge: typeof resizeEvent.edges.left !== 'undefined' ? 'left' : 'right'
+      edge: typeof resizeEvent.edges.left !== 'undefined' ? 'left' : 'right',
     });
     this.dayColumnWidth = this.getDayColumnWidth(weekViewContainer);
     const resizeHelper: CalendarResizeHelper = new CalendarResizeHelper(
       weekViewContainer,
-      this.dayColumnWidth
+      this.dayColumnWidth,
     );
     this.validateResize = ({ rectangle }) =>
       resizeHelper.validateResize({ rectangle });
@@ -326,10 +329,10 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
   resizing(
     weekEvent: WeekViewEvent,
     resizeEvent: ResizeEvent,
-    dayWidth: number
+    dayWidth: number,
   ): void {
     const currentResize: WeekViewEventResize = this.currentResizes.get(
-      weekEvent
+      weekEvent,
     );
 
     if (resizeEvent.edges.left) {
@@ -347,7 +350,7 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
    */
   resizeEnded(weekEvent: WeekViewEvent): void {
     const currentResize: WeekViewEventResize = this.currentResizes.get(
-      weekEvent
+      weekEvent,
     );
 
     let daysDiff: number;
@@ -378,7 +381,7 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
   eventDragged(
     weekEvent: WeekViewEvent,
     draggedByPx: number,
-    dayWidth: number
+    dayWidth: number,
   ): void {
     const daysDragged: number = draggedByPx / dayWidth;
     const newStart: Date = addDays(weekEvent.event.start, daysDragged);
@@ -404,7 +407,7 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
     this.dayColumnWidth = this.getDayColumnWidth(weekViewContainer);
     const dragHelper: CalendarDragHelper = new CalendarDragHelper(
       weekViewContainer,
-      event
+      event,
     );
     this.validateDrag = ({ x, y }) =>
       this.currentResizes.size === 0 && dragHelper.validateDrag({ x, y });
@@ -416,7 +419,7 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
       viewDate: this.viewDate,
       weekStartsOn: this.weekStartsOn,
       excluded: this.excludeDays,
-      weekendDays: this.weekendDays
+      weekendDays: this.weekendDays,
     });
     this.emitBeforeViewRender();
   }
@@ -428,7 +431,7 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
       weekStartsOn: this.weekStartsOn,
       excluded: this.excludeDays,
       precision: this.precision,
-      absolutePositionedEvents: true
+      absolutePositionedEvents: true,
     });
     this.emitBeforeViewRender();
   }
@@ -442,7 +445,7 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
     if (this.days && this.view) {
       this.beforeViewRender.emit({
         header: this.days,
-        period: this.view.period
+        period: this.view.period,
       });
     }
   }
