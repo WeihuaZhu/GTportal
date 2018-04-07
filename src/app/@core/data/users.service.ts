@@ -12,7 +12,7 @@ export class UserService {
     Chengxi: { name: 'Chengxi Yao', picture: 'assets/images/nick.png' },
     Weihua: { name: 'Weihua Zhu', picture: 'assets/images/nick.png' },
     Haiyue: { name: 'Haiyue Yin', picture: 'assets/images/eva.png' },
-    nick: { name: 'Jack Williams', picture: 'assets/images/jack.png' },
+    jack: { name: 'Jack Williams', picture: 'assets/images/jack.png' },
     lee: { name: 'Lee Wong', picture: 'assets/images/lee.png' },
     alan: { name: 'Alan Thompson', picture: 'assets/images/alan.png' },
     kate: { name: 'Kate Martinez', picture: 'assets/images/kate.png' },
