@@ -3,7 +3,7 @@ import {
   HostListener,
   Input,
   Output,
-  EventEmitter
+  EventEmitter,
 } from '@angular/core';
 import startOfToday from 'date-fns/start_of_today/index';
 
@@ -19,7 +19,7 @@ import startOfToday from 'date-fns/start_of_today/index';
  * ```
  */
 @Directive({
-  selector: '[mwlCalendarToday]'
+  selector: '[ngxMwlCalendarToday]',
 })
 export class CalendarTodayDirective {
   /**

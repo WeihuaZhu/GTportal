@@ -3,7 +3,7 @@ import { CalendarEvent } from 'calendar-utils';
 import { trackByIndex } from './util';
 
 @Component({
-  selector: 'mwl-calendar-event-actions',
+  selector: 'ngx-mwl-calendar-event-actions',
   template: `
     <span *ngIf="event.actions" class="cal-event-actions">
       <a
@@ -15,7 +15,7 @@ import { trackByIndex } from './util';
         [innerHtml]="action.label">
       </a>
     </span>
-  `
+  `,
 })
 export class CalendarEventActionsComponent {
   @Input() event: CalendarEvent;

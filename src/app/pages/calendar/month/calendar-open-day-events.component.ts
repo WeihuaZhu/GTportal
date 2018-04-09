@@ -3,14 +3,14 @@ import {
   Input,
   Output,
   EventEmitter,
-  TemplateRef
+  TemplateRef,
 } from '@angular/core';
 import { trigger, style, transition, animate } from '@angular/animations';
 import { CalendarEvent } from 'calendar-utils';
 import { trackByEventId } from '../common/util';
 
 @Component({
-  selector: 'mwl-calendar-open-day-events',
+  selector: 'ngx-mwl-calendar-open-day-events',
   template: `
     <ng-template
       #defaultTemplate
@@ -26,13 +26,13 @@ import { trackByEventId } from '../common/util';
           class="cal-event"
           [style.backgroundColor]="event.color?.primary">
         </span>
-        <mwl-calendar-event-title
+        <ngx-mwl-calendar-event-title
           [event]="event"
           [customTemplate]="eventTitleTemplate"
           view="month"
           (mwlClick)="eventClicked.emit({event: event})">
-        </mwl-calendar-event-title>
-        <mwl-calendar-event-actions [event]="event"></mwl-calendar-event-actions>
+        </ngx-mwl-calendar-event-title>
+        <ngx-mwl-calendar-event-actions [event]="event"></ngx-mwl-calendar-event-actions>
       </div>
     </ng-template>
     <div class="cal-open-day-events" [@collapse] *ngIf="isOpen">
@@ -49,14 +49,14 @@ import { trackByEventId } from '../common/util';
     trigger('collapse', [
       transition('void => *', [
         style({ height: 0, overflow: 'hidden' }),
-        animate('150ms', style({ height: '*' }))
+        animate('150ms', style({ height: '*' })),
       ]),
       transition('* => void', [
         style({ height: '*', overflow: 'hidden' }),
-        animate('150ms', style({ height: 0 }))
-      ])
-    ])
-  ]
+        animate('150ms', style({ height: 0 })),
+      ]),
+    ]),
+  ],
 })
 export class CalendarOpenDayEventsComponent {
   @Input() isOpen: boolean = false;

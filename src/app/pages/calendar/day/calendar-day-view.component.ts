@@ -9,7 +9,7 @@ import {
   Inject,
   OnInit,
   OnDestroy,
-  TemplateRef
+  TemplateRef,
 } from '@angular/core';
 import {
   CalendarEvent,
@@ -17,7 +17,7 @@ import {
   DayViewHour,
   DayViewHourSegment,
   DayViewEvent,
-  ViewPeriod
+  ViewPeriod,
 } from 'calendar-utils';
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
@@ -61,16 +61,16 @@ export interface DayViewEventResize {
  * ```
  */
 @Component({
-  selector: 'mwl-calendar-day-view',
+  selector: 'ngx-mwl-calendar-day-view',
   template: `
     <div class="cal-day-view" #dayViewContainer>
-      <mwl-calendar-all-day-event
+      <ngx-mwl-calendar-all-day-event
         *ngFor="let event of view.allDayEvents; trackBy:trackByEventId"
         [event]="event"
         [customTemplate]="allDayEventTemplate"
         [eventTitleTemplate]="eventTitleTemplate"
         (eventClicked)="eventClicked.emit({event: event})">
-      </mwl-calendar-all-day-event>
+      </ngx-mwl-calendar-all-day-event>
       <div class="cal-hour-rows">
         <div class="cal-events">
           <div
@@ -98,7 +98,7 @@ export interface DayViewEventResize {
             [style.height.px]="dayEvent.height"
             [style.marginLeft.px]="dayEvent.left + 70"
             [style.width.px]="dayEvent.width - 1">
-            <mwl-calendar-day-view-event
+            <ngx-mwl-calendar-day-view-event
               [dayEvent]="dayEvent"
               [tooltipPlacement]="tooltipPlacement"
               [tooltipTemplate]="tooltipTemplate"
@@ -106,11 +106,11 @@ export interface DayViewEventResize {
               [customTemplate]="eventTemplate"
               [eventTitleTemplate]="eventTitleTemplate"
               (eventClicked)="eventClicked.emit({event: dayEvent.event})">
-            </mwl-calendar-day-view-event>
+            </ngx-mwl-calendar-day-view-event>
           </div>
         </div>
         <div class="cal-hour" *ngFor="let hour of hours; trackBy:trackByHour" [style.minWidth.px]="view?.width + 70">
-          <mwl-calendar-day-view-hour-segment
+          <ngx-mwl-calendar-day-view-hour-segment
             *ngFor="let segment of hour.segments; trackBy:trackByHourSegment"
             [style.height.px]="hourSegmentHeight"
             [segment]="segment"
@@ -123,11 +123,11 @@ export interface DayViewEventResize {
             (dragEnter)="segment.dragOver = true"
             (dragLeave)="segment.dragOver = false"
             (drop)="segment.dragOver = false; eventDropped($event, segment)">
-          </mwl-calendar-day-view-hour-segment>
+          </ngx-mwl-calendar-day-view-hour-segment>
         </div>
       </div>
     </div>
-  `
+  `,
 })
 export class CalendarDayViewComponent implements OnChanges, OnInit, OnDestroy {
   /**
@@ -137,7 +137,8 @@ export class CalendarDayViewComponent implements OnChanges, OnInit, OnDestroy {
 
   /**
    * An array of events to display on view
-   * The schema is available here: https://github.com/mattlewis92/calendar-utils/blob/c51689985f59a271940e30bc4e2c4e1fee3fcb5c/src/calendarUtils.ts#L49-L63
+   * The schema is available here: https://github.com/mattlewis92/calendar-utils
+   * /blob/c51689985f59a271940e30bc4e2c4e1fee3fcb5c/src/calendarUtils.ts#L49-L63
    */
   @Input() events: CalendarEvent[] = [];
 
@@ -250,7 +251,8 @@ export class CalendarDayViewComponent implements OnChanges, OnInit, OnDestroy {
 
   /**
    * An output that will be called before the view is rendered for the current day.
-   * If you add the `cssClass` property to an hour grid segment it will add that class to the hour segment in the template
+   * If you add the `cssClass` property to an hour grid segment it will add
+   * that class to the hour segment in the template
    */
   @Output()
   beforeViewRender = new EventEmitter<CalendarDayViewBeforeRenderEvent>();
@@ -319,7 +321,7 @@ export class CalendarDayViewComponent implements OnChanges, OnInit, OnDestroy {
   constructor(
     private cdr: ChangeDetectorRef,
     private utils: CalendarUtils,
-    @Inject(LOCALE_ID) locale: string
+    @Inject(LOCALE_ID) locale: string,
   ) {
     this.locale = locale;
   }
@@ -379,12 +381,12 @@ export class CalendarDayViewComponent implements OnChanges, OnInit, OnDestroy {
 
   eventDropped(
     dropEvent: { dropData?: { event?: CalendarEvent } },
-    segment: DayViewHourSegment
+    segment: DayViewHourSegment,
   ): void {
     if (dropEvent.dropData && dropEvent.dropData.event) {
       this.eventTimesChanged.emit({
         event: dropEvent.dropData.event,
-        newStart: segment.date
+        newStart: segment.date,
       });
     }
   }
@@ -392,15 +394,15 @@ export class CalendarDayViewComponent implements OnChanges, OnInit, OnDestroy {
   resizeStarted(
     event: DayViewEvent,
     resizeEvent: ResizeEvent,
-    dayViewContainer: HTMLElement
+    dayViewContainer: HTMLElement,
   ): void {
     this.currentResizes.set(event, {
       originalTop: event.top,
       originalHeight: event.height,
-      edge: typeof resizeEvent.edges.top !== 'undefined' ? 'top' : 'bottom'
+      edge: typeof resizeEvent.edges.top !== 'undefined' ? 'top' : 'bottom',
     });
     const resizeHelper: CalendarResizeHelper = new CalendarResizeHelper(
-      dayViewContainer
+      dayViewContainer,
     );
     this.validateResize = ({ rectangle }) =>
       resizeHelper.validateResize({ rectangle });
@@ -448,7 +450,7 @@ export class CalendarDayViewComponent implements OnChanges, OnInit, OnDestroy {
   dragStart(event: HTMLElement, dayViewContainer: HTMLElement): void {
     const dragHelper: CalendarDragHelper = new CalendarDragHelper(
       dayViewContainer,
-      event
+      event,
     );
     this.validateDrag = ({ x, y }) =>
       this.currentResizes.size === 0 && dragHelper.validateDrag({ x, y });
@@ -473,12 +475,12 @@ export class CalendarDayViewComponent implements OnChanges, OnInit, OnDestroy {
       hourSegments: this.hourSegments,
       dayStart: {
         hour: this.dayStartHour,
-        minute: this.dayStartMinute
+        minute: this.dayStartMinute,
       },
       dayEnd: {
         hour: this.dayEndHour,
-        minute: this.dayEndMinute
-      }
+        minute: this.dayEndMinute,
+      },
     });
     this.emitBeforeViewRender();
   }
@@ -490,14 +492,14 @@ export class CalendarDayViewComponent implements OnChanges, OnInit, OnDestroy {
       hourSegments: this.hourSegments,
       dayStart: {
         hour: this.dayStartHour,
-        minute: this.dayStartMinute
+        minute: this.dayStartMinute,
       },
       dayEnd: {
         hour: this.dayEndHour,
-        minute: this.dayEndMinute
+        minute: this.dayEndMinute,
       },
       eventWidth: this.eventWidth,
-      segmentHeight: this.hourSegmentHeight
+      segmentHeight: this.hourSegmentHeight,
     });
     this.emitBeforeViewRender();
   }
@@ -511,9 +513,9 @@ export class CalendarDayViewComponent implements OnChanges, OnInit, OnDestroy {
     if (this.hours && this.view) {
       this.beforeViewRender.emit({
         body: {
-          hourGrid: this.hours
+          hourGrid: this.hours,
         },
-        period: this.view.period
+        period: this.view.period,
       });
     }
   }

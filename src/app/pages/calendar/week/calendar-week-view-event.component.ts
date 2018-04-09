@@ -3,12 +3,12 @@ import {
   Input,
   Output,
   EventEmitter,
-  TemplateRef
+  TemplateRef,
 } from '@angular/core';
 import { WeekViewEvent } from 'calendar-utils';
 
 @Component({
-  selector: 'mwl-calendar-week-view-event',
+  selector: 'ngx-mwl-calendar-week-view-event',
   template: `
     <ng-template
       #defaultTemplate
@@ -21,18 +21,18 @@ import { WeekViewEvent } from 'calendar-utils';
         class="cal-event"
         [style.backgroundColor]="weekEvent.event.color?.secondary"
         [style.borderColor]="weekEvent.event.color?.primary"
-        [mwlCalendarTooltip]="weekEvent.event.title | calendarEventTitle:'weekTooltip':weekEvent.event"
+        [ngxMwlCalendarTooltip]="weekEvent.event.title | calendarEventTitle:'weekTooltip':weekEvent.event"
         [tooltipPlacement]="tooltipPlacement"
         [tooltipEvent]="weekEvent.event"
         [tooltipTemplate]="tooltipTemplate"
         [tooltipAppendToBody]="tooltipAppendToBody">
-        <mwl-calendar-event-actions [event]="weekEvent.event"></mwl-calendar-event-actions>
-        <mwl-calendar-event-title
+        <ngx-mwl-calendar-event-actions [event]="weekEvent.event"></ngx-mwl-calendar-event-actions>
+        <ngx-mwl-calendar-event-title
           [event]="weekEvent.event"
           [customTemplate]="eventTitleTemplate"
           view="week"
           (mwlClick)="eventClicked.emit()">
-        </mwl-calendar-event-title>
+        </ngx-mwl-calendar-event-title>
       </div>
     </ng-template>
     <ng-template
@@ -45,7 +45,7 @@ import { WeekViewEvent } from 'calendar-utils';
         tooltipAppendToBody: tooltipAppendToBody
       }">
     </ng-template>
-  `
+  `,
 })
 export class CalendarWeekViewEventComponent {
   @Input() weekEvent: WeekViewEvent;

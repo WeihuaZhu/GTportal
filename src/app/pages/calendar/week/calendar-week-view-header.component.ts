@@ -3,13 +3,13 @@ import {
   Input,
   Output,
   EventEmitter,
-  TemplateRef
+  TemplateRef,
 } from '@angular/core';
 import { CalendarEvent, WeekDay } from 'calendar-utils';
 import { trackByWeekDayHeaderDate } from '../common/util';
 
 @Component({
-  selector: 'mwl-calendar-week-view-header',
+  selector: 'ngx-mwl-calendar-week-view-header',
   template: `
     <ng-template
       #defaultTemplate
@@ -25,7 +25,6 @@ import { trackByWeekDayHeaderDate } from '../common/util';
           [class.cal-today]="day.isToday"
           [class.cal-future]="day.isFuture"
           [class.cal-weekend]="day.isWeekend"
-          [class.cal-drag-over]="day.dragOver"
           [ngClass]="day.cssClass"
           (mwlClick)="dayHeaderClicked.emit({day: day})"
           mwlDroppable
@@ -39,9 +38,10 @@ import { trackByWeekDayHeaderDate } from '../common/util';
     </ng-template>
     <ng-template
       [ngTemplateOutlet]="customTemplate || defaultTemplate"
-      [ngTemplateOutletContext]="{days: days, locale: locale, dayHeaderClicked: dayHeaderClicked, eventDropped: eventDropped}">
+      [ngTemplateOutletContext]="{days: days, locale: locale,
+      dayHeaderClicked: dayHeaderClicked, eventDropped: eventDropped}">
     </ng-template>
-  `
+  `,
 })
 export class CalendarWeekViewHeaderComponent {
   @Input() days: WeekDay[];

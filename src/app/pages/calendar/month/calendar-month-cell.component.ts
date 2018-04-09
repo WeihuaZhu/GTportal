@@ -3,13 +3,13 @@ import {
   Input,
   Output,
   EventEmitter,
-  TemplateRef
+  TemplateRef,
 } from '@angular/core';
 import { MonthViewDay, CalendarEvent } from 'calendar-utils';
 import { trackByEventId } from '../common/util';
 
 @Component({
-  selector: 'mwl-calendar-month-cell',
+  selector: 'ngx-mwl-calendar-month-cell',
   template: `
     <ng-template
       #defaultTemplate
@@ -34,7 +34,7 @@ import { trackByEventId } from '../common/util';
           [ngClass]="event?.cssClass"
           (mouseenter)="highlightDay.emit({event: event})"
           (mouseleave)="unhighlightDay.emit({event: event})"
-          [mwlCalendarTooltip]="event.title | calendarEventTitle:'monthTooltip':event"
+          [ngxMwlCalendarTooltip]="event.title | calendarEventTitle:'monthTooltip':event"
           [tooltipPlacement]="tooltipPlacement"
           [tooltipEvent]="event"
           [tooltipTemplate]="tooltipTemplate"
@@ -62,7 +62,8 @@ import { trackByEventId } from '../common/util';
     </ng-template>
   `,
   host: {
-    class: 'cal-cell cal-day-cell',
+    class: 'cal-cell' +
+    'cal-day-cell',
     '[class.cal-past]': 'day.isPast',
     '[class.cal-today]': 'day.isToday',
     '[class.cal-future]': 'day.isFuture',
@@ -71,8 +72,8 @@ import { trackByEventId } from '../common/util';
     '[class.cal-out-month]': '!day.inMonth',
     '[class.cal-has-events]': 'day.events.length > 0',
     '[class.cal-open]': 'day === openDay',
-    '[style.backgroundColor]': 'day.backgroundColor'
-  }
+    '[style.backgroundColor]': 'day.backgroundColor',
+  },
 })
 export class CalendarMonthCellComponent {
   @Input() day: MonthViewDay;

@@ -5,7 +5,7 @@ export class CalendarDragHelper {
 
   constructor(
     private dragContainerElement: HTMLElement,
-    draggableElement: HTMLElement
+    draggableElement: HTMLElement,
   ) {
     this.startPosition = draggableElement.getBoundingClientRect();
   }
@@ -15,7 +15,7 @@ export class CalendarDragHelper {
       left: this.startPosition.left + x,
       right: this.startPosition.right + x,
       top: this.startPosition.top + y,
-      bottom: this.startPosition.bottom + y
+      bottom: this.startPosition.bottom + y,
     });
 
     return isInside(this.dragContainerElement.getBoundingClientRect(), newRect);

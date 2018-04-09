@@ -9,12 +9,12 @@ import { CalendarCommonModule } from '../common/calendar-common.module';
 
 export {
   CalendarWeekViewComponent,
-  CalendarWeekViewBeforeRenderEvent
+  CalendarWeekViewBeforeRenderEvent,
 } from './calendar-week-view.component';
 export {
   WeekViewEvent as CalendarWeekViewEvent,
   WeekViewEventRow as CalendarWeekViewEventRow,
-  GetWeekViewArgs as CalendarGetWeekViewArgs
+  GetWeekViewArgs as CalendarGetWeekViewArgs,
 } from 'calendar-utils';
 
 @NgModule({
@@ -22,19 +22,19 @@ export {
     CommonModule,
     ResizableModule,
     DragAndDropModule,
-    CalendarCommonModule
+    CalendarCommonModule,
   ],
   declarations: [
     CalendarWeekViewComponent,
     CalendarWeekViewHeaderComponent,
-    CalendarWeekViewEventComponent
+    CalendarWeekViewEventComponent,
   ],
   exports: [
     ResizableModule,
     DragAndDropModule,
     CalendarWeekViewComponent,
     CalendarWeekViewHeaderComponent,
-    CalendarWeekViewEventComponent
-  ]
+    CalendarWeekViewEventComponent,
+  ],
 })
 export class CalendarWeekModule {}

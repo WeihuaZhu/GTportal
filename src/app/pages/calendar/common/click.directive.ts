@@ -5,11 +5,11 @@ import {
   OnInit,
   OnDestroy,
   Output,
-  EventEmitter
+  EventEmitter,
 } from '@angular/core';
 
 @Directive({
-  selector: '[mwlClick]'
+  selector: '[ngxMwlClick]',
 })
 export class ClickDirective implements OnInit, OnDestroy {
   @Output('mwlClick') click: EventEmitter<MouseEvent> = new EventEmitter(); // tslint:disable-line
@@ -28,7 +28,7 @@ export class ClickDirective implements OnInit, OnDestroy {
       eventName,
       event => {
         this.click.next(event);
-      }
+      },
     );
   }
 

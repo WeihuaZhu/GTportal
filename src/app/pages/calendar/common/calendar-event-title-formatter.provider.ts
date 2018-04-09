@@ -1,7 +1,8 @@
 import { CalendarEvent } from 'calendar-utils';
 
 /**
- * This class is responsible for displaying all event titles within the calendar. You may override any of its methods via angulars DI to suit your requirements. For example:
+ * This class is responsible for displaying all event titles within the calendar.
+ * You may override any of its methods via angulars DI to suit your requirements. For example:
  *
  * ```typescript
  * import { CalendarEventTitleFormatter, CalendarEvent } from 'angular-calendar';

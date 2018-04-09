@@ -2,7 +2,7 @@ import { Component, Input, TemplateRef } from '@angular/core';
 import { DayViewHourSegment } from 'calendar-utils';
 
 @Component({
-  selector: 'mwl-calendar-day-view-hour-segment',
+  selector: 'ngx-mwl-calendar-day-view-hour-segment',
   template: `
     <ng-template
       #defaultTemplate
@@ -26,7 +26,7 @@ import { DayViewHourSegment } from 'calendar-utils';
         locale: locale
       }">
     </ng-template>
-  `
+  `,
 })
 export class CalendarDayViewHourSegmentComponent {
   @Input() segment: DayViewHourSegment;

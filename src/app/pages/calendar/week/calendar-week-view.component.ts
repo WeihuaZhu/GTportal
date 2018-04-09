@@ -53,13 +53,13 @@ export interface CalendarWeekViewBeforeRenderEvent {
   selector: 'ngx-mwl-calendar-week-view',
   template: `
     <div class="cal-week-view" #weekViewContainer>
-      <mwl-calendar-week-view-header
+      <ngx-mwl-calendar-week-view-header
         [days]="days"
         [locale]="locale"
         [customTemplate]="headerTemplate"
         (dayHeaderClicked)="dayHeaderClicked.emit($event)"
         (eventDropped)="eventTimesChanged.emit($event)">
-      </mwl-calendar-week-view-header>
+      </ngx-mwl-calendar-week-view-header>
       <div *ngFor="let eventRow of view.eventRows; trackBy:trackByIndex" #eventRowContainer class="cal-events-row">
         <div
           *ngFor="let weekEvent of eventRow.row; trackBy:trackByEventId"
@@ -84,7 +84,7 @@ export interface CalendarWeekViewBeforeRenderEvent {
           [validateDrag]="validateDrag"
           (dragPointerDown)="dragStart(weekViewContainer, event)"
           (dragEnd)="eventDragged(weekEvent, $event.x, dayColumnWidth)">
-          <mwl-calendar-week-view-event
+          <ngx-mwl-calendar-week-view-event
             [weekEvent]="weekEvent"
             [tooltipPlacement]="tooltipPlacement"
             [tooltipTemplate]="tooltipTemplate"
@@ -92,7 +92,7 @@ export interface CalendarWeekViewBeforeRenderEvent {
             [customTemplate]="eventTemplate"
             [eventTitleTemplate]="eventTitleTemplate"
             (eventClicked)="eventClicked.emit({event: weekEvent.event})">
-          </mwl-calendar-week-view-event>
+          </ngx-mwl-calendar-week-view-event>
         </div>
       </div>
     </div>

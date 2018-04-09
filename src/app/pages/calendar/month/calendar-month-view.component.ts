@@ -9,14 +9,14 @@ import {
   OnDestroy,
   LOCALE_ID,
   Inject,
-  TemplateRef
+  TemplateRef,
 } from '@angular/core';
 import {
   CalendarEvent,
   WeekDay,
   MonthView,
   MonthViewDay,
-  ViewPeriod
+  ViewPeriod,
 } from 'calendar-utils';
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
@@ -55,19 +55,20 @@ export interface CalendarMonthViewEventTimesChangedEvent
  * ```
  */
 @Component({
-  selector: 'mwl-calendar-month-view',
+  selector: 'ngx-mwl-calendar-month-view',
   template: `
     <div class="cal-month-view">
-      <mwl-calendar-month-view-header
+      <ngx-mwl-calendar-month-view-header
         [days]="columnHeaders"
         [locale]="locale"
         [customTemplate]="headerTemplate">
-      </mwl-calendar-month-view-header>
+      </ngx-mwl-calendar-month-view-header>
       <div class="cal-days">
         <div *ngFor="let rowIndex of view.rowOffsets; trackByIndex">
           <div class="cal-cell-row">
-            <mwl-calendar-month-cell
-              *ngFor="let day of (view.days | slice : rowIndex : rowIndex + (view.totalDaysVisibleInWeek)); trackBy:trackByDate"
+            <ngx-mwl-calendar-month-cell
+              *ngFor="let day of (view.days | slice : rowIndex : rowIndex + (view.totalDaysVisibleInWeek));
+              trackBy:trackByDate"
               [class.cal-drag-over]="day.dragOver"
               [ngClass]="day?.cssClass"
               [day]="day"
@@ -85,19 +86,19 @@ export interface CalendarMonthViewEventTimesChangedEvent
               (dragLeave)="day.dragOver = false"
               (drop)="day.dragOver = false; eventDropped(day, $event.dropData.event)"
               (eventClicked)="eventClicked.emit({event: $event.event})">
-            </mwl-calendar-month-cell>
+            </ngx-mwl-calendar-month-cell>
           </div>
-          <mwl-calendar-open-day-events
+          <ngx-mwl-calendar-open-day-events
             [isOpen]="openRowIndex === rowIndex"
             [events]="openDay?.events"
             [customTemplate]="openDayEventsTemplate"
             [eventTitleTemplate]="eventTitleTemplate"
             (eventClicked)="eventClicked.emit({event: $event.event})">
-          </mwl-calendar-open-day-events>
+          </ngx-mwl-calendar-open-day-events>
         </div>
       </div>
     </div>
-  `
+  `,
 })
 export class CalendarMonthViewComponent
   implements OnChanges, OnInit, OnDestroy {
@@ -108,7 +109,8 @@ export class CalendarMonthViewComponent
 
   /**
    * An array of events to display on view.
-   * The schema is available here: https://github.com/mattlewis92/calendar-utils/blob/c51689985f59a271940e30bc4e2c4e1fee3fcb5c/src/calendarUtils.ts#L49-L63
+   * The schema is available here: https://github.com/mattlewis92/calendar
+   * -utils/blob/c51689985f59a271940e30bc4e2c4e1fee3fcb5c/src/calendarUtils.ts#L49-L63
    */
   @Input() events: CalendarEvent[] = [];
 
@@ -249,7 +251,7 @@ export class CalendarMonthViewComponent
   constructor(
     private cdr: ChangeDetectorRef,
     private utils: CalendarUtils,
-    @Inject(LOCALE_ID) locale: string
+    @Inject(LOCALE_ID) locale: string,
   ) {
     this.locale = locale;
   }
@@ -329,7 +331,7 @@ export class CalendarMonthViewComponent
     const date: number = getDate(day.date);
     const newStart: Date = setDate(
       setMonth(setYear(event.start, year), month),
-      date
+      date,
     );
     let newEnd: Date;
     if (event.end) {
@@ -354,7 +356,7 @@ export class CalendarMonthViewComponent
       viewDate: this.viewDate,
       weekStartsOn: this.weekStartsOn,
       excluded: this.excludeDays,
-      weekendDays: this.weekendDays
+      weekendDays: this.weekendDays,
     });
     this.emitBeforeViewRender();
   }
@@ -365,7 +367,7 @@ export class CalendarMonthViewComponent
       viewDate: this.viewDate,
       weekStartsOn: this.weekStartsOn,
       excluded: this.excludeDays,
-      weekendDays: this.weekendDays
+      weekendDays: this.weekendDays,
     });
     this.emitBeforeViewRender();
   }
@@ -373,7 +375,7 @@ export class CalendarMonthViewComponent
   private checkActiveDayIsOpen(): void {
     if (this.activeDayIsOpen === true) {
       this.openDay = this.view.days.find(day =>
-        isSameDay(day.date, this.viewDate)
+        isSameDay(day.date, this.viewDate),
       );
       const index: number = this.view.days.indexOf(this.openDay);
       this.openRowIndex =
@@ -398,7 +400,7 @@ export class CalendarMonthViewComponent
       this.beforeViewRender.emit({
         header: this.columnHeaders,
         body: this.view.days,
-        period: this.view.period
+        period: this.view.period,
       });
     }
   }

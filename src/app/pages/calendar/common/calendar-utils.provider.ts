@@ -14,7 +14,7 @@ import {
   getDayViewHourGrid,
   GetDayViewHourGridArgs,
   DayViewHour,
-  WeekView
+  WeekView,
 } from 'calendar-utils';
 
 @Injectable()

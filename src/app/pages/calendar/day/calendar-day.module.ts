@@ -10,7 +10,7 @@ import { CalendarCommonModule } from '../common/calendar-common.module';
 
 export {
   CalendarDayViewComponent,
-  CalendarDayViewBeforeRenderEvent
+  CalendarDayViewBeforeRenderEvent,
 } from './calendar-day-view.component';
 
 @NgModule({
@@ -18,13 +18,13 @@ export {
     CommonModule,
     ResizableModule,
     DragAndDropModule,
-    CalendarCommonModule
+    CalendarCommonModule,
   ],
   declarations: [
     CalendarDayViewComponent,
     CalendarAllDayEventComponent,
     CalendarDayViewHourSegmentComponent,
-    CalendarDayViewEventComponent
+    CalendarDayViewEventComponent,
   ],
   exports: [
     ResizableModule,
@@ -32,7 +32,7 @@ export {
     CalendarDayViewComponent,
     CalendarAllDayEventComponent,
     CalendarDayViewHourSegmentComponent,
-    CalendarDayViewEventComponent
-  ]
+    CalendarDayViewEventComponent,
+  ],
 })
 export class CalendarDayModule {}

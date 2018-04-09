@@ -1,7 +1,7 @@
 import { InjectionToken, Inject } from '@angular/core';
 import {
   CalendarDateFormatterInterface,
-  DateFormatterParams
+  DateFormatterParams,
 } from './calendar-date-formatter.interface';
 
 export const MOMENT: InjectionToken<string> = new InjectionToken('Moment');
@@ -70,7 +70,7 @@ export class CalendarMomentDateFormatter
    */
   public weekViewColumnSubHeader({
     date,
-    locale
+    locale,
   }: DateFormatterParams): string {
     return this.moment(date)
       .locale(locale)

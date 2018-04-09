@@ -9,12 +9,12 @@ import { CalendarDateFormatter } from './calendar-date-formatter.provider';
  * ```
  */
 @Pipe({
-  name: 'calendarDate'
+  name: 'calendarDate',
 })
 export class CalendarDatePipe implements PipeTransform {
   constructor(
     private dateFormatter: CalendarDateFormatter,
-    @Inject(LOCALE_ID) private locale: string
+    @Inject(LOCALE_ID) private locale: string,
   ) {}
 
   transform(date: Date, method: string, locale: string = this.locale): string {

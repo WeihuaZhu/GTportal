@@ -12,7 +12,7 @@ import {
   ComponentFactory,
   Inject,
   Renderer2,
-  TemplateRef
+  TemplateRef,
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Positioning } from 'positioning';
@@ -38,7 +38,7 @@ import { CalendarEvent } from 'calendar-utils';
         event: event
       }">
     </ng-template>
-  `
+  `,
 })
 export class CalendarTooltipWindowComponent {
   @Input() contents: string;
@@ -51,10 +51,10 @@ export class CalendarTooltipWindowComponent {
 }
 
 @Directive({
-  selector: '[mwlCalendarTooltip]'
+  selector: '[ngxMwlCalendarTooltip]',
 })
 export class CalendarTooltipDirective implements OnDestroy {
-  @Input('mwlCalendarTooltip') contents: string; // tslint:disable-line no-input-rename
+  @Input('ngxMwlCalendarTooltip') contents: string; // tslint:disable-line no-input-rename
 
   @Input('tooltipPlacement') placement: string = 'top'; // tslint:disable-line no-input-rename
 
@@ -77,7 +77,7 @@ export class CalendarTooltipDirective implements OnDestroy {
     @Inject(DOCUMENT) private document //tslint:disable-line
   ) {
     this.tooltipFactory = componentFactoryResolver.resolveComponentFactory(
-      CalendarTooltipWindowComponent
+      CalendarTooltipWindowComponent,
     );
   }
 
@@ -101,7 +101,7 @@ export class CalendarTooltipDirective implements OnDestroy {
         this.tooltipFactory,
         0,
         this.injector,
-        []
+        [],
       );
       this.tooltipRef.instance.contents = this.contents;
       this.tooltipRef.instance.placement = this.placement;
@@ -119,7 +119,7 @@ export class CalendarTooltipDirective implements OnDestroy {
   private hide(): void {
     if (this.tooltipRef) {
       this.viewContainerRef.remove(
-        this.viewContainerRef.indexOf(this.tooltipRef.hostView)
+        this.viewContainerRef.indexOf(this.tooltipRef.hostView),
       );
       this.tooltipRef = null;
     }
@@ -131,7 +131,7 @@ export class CalendarTooltipDirective implements OnDestroy {
         this.elementRef.nativeElement,
         this.tooltipRef.location.nativeElement.children[0],
         this.placement,
-        this.appendToBody
+        this.appendToBody,
       );
 
       const elm: HTMLElement = this.tooltipRef.location.nativeElement

@@ -3,7 +3,7 @@ import { isInside } from './util';
 export class CalendarResizeHelper {
   constructor(
     private resizeContainerElement: HTMLElement,
-    private minWidth?: number
+    private minWidth?: number,
   ) {}
 
   validateResize({ rectangle }: { rectangle: ClientRect }): boolean {
@@ -13,7 +13,7 @@ export class CalendarResizeHelper {
 
     return isInside(
       this.resizeContainerElement.getBoundingClientRect(),
-      rectangle
+      rectangle,
     );
   }
 }

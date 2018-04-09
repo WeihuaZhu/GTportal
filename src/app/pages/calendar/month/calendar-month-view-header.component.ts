@@ -3,7 +3,7 @@ import { WeekDay } from 'calendar-utils';
 import { trackByWeekDayHeaderDate } from '../common/util';
 
 @Component({
-  selector: 'mwl-calendar-month-view-header',
+  selector: 'ngx-mwl-calendar-month-view-header',
   template: `
     <ng-template
       #defaultTemplate
@@ -26,7 +26,7 @@ import { trackByWeekDayHeaderDate } from '../common/util';
       [ngTemplateOutlet]="customTemplate || defaultTemplate"
       [ngTemplateOutletContext]="{days: days, locale: locale}">
     </ng-template>
-  `
+  `,
 })
 export class CalendarMonthViewHeaderComponent {
   @Input() days: WeekDay[];
