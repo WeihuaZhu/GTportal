@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { MapsAPILoader } from '@agm/core';
+// import { FormControl } from '@angular/forms';
+// import { MapsAPILoader } from '@agm/core';
 import { } from 'googlemaps';
 
 @Component({
