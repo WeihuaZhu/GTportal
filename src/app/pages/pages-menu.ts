@@ -65,19 +65,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Components',
-    icon: 'nb-gear',
-    children: [
-      {
-        title: 'Tree',
-        link: '/pages/components/tree',
-      }, {
-        title: 'Notifications',
-        link: '/pages/components/notifications',
-      },
-    ],
-  },
-  {
     title: 'Maps',
     icon: 'nb-location',
     children: [
@@ -96,24 +83,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Search Maps',
         link: '/pages/maps/searchmap',
-      },
-    ],
-  },
-  {
-    title: 'Charts',
-    icon: 'nb-bar-chart',
-    children: [
-      {
-        title: 'Echarts',
-        link: '/pages/charts/echarts',
-      },
-      {
-        title: 'Charts.js',
-        link: '/pages/charts/chartjs',
-      },
-      {
-        title: 'D3',
-        link: '/pages/charts/d3',
       },
     ],
   },
