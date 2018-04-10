@@ -24,9 +24,6 @@ const routes: Routes = [{
     path: 'charts',
     loadChildren: './charts/charts.module#ChartsModule',
   }, {
-    path: 'editors',
-    loadChildren: './editors/editors.module#EditorsModule',
-  }, {
     path: 'forms',
     loadChildren: './forms/forms.module#FormsModule',
   }, {
