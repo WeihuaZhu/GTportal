@@ -87,8 +87,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Tables',
-    icon: 'nb-tables',
+    title: 'ContactUs',
+    icon: 'nb-compose',
     children: [
       {
         title: 'Smart Table',
