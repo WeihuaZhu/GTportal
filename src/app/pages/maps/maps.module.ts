@@ -6,7 +6,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { ThemeModule } from '../../@theme/theme.module';
 import { MapsRoutingModule, routedComponents } from './maps-routing.module';
 
-import { AgmDirectionModule } from 'agm-direction'; 
+import { AgmDirectionModule } from 'agm-direction';
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { AgmDirectionModule } from 'agm-direction';
     MapsRoutingModule,
     NgxEchartsModule,
     AgmDirectionModule,
-    
+
   ],
   exports: [],
   declarations: [
