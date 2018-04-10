@@ -20,7 +20,6 @@ import { Component } from '@angular/core';
               [longitude]="lng"
               *ngIf="locationChosen">
           </agm-marker>
-          
         </agm-map>
       </nb-card-body>
     </nb-card>
