@@ -141,11 +141,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
-  // {
-  //   title: 'Calendar',
-  //   icon: 'nb-tables',
-  //   link: '/pages/calendar',
-  // },
+  {
+    title: 'Calendar',
+    icon: 'nb-tables',
+    children: [
+      {
+        title: 'Google Calendar',
+        link: '/pages/calendar/gcalendar',
+      },
+    ],
+  },
   {
     title: 'Auth',
     icon: 'nb-locked',

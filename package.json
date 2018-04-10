@@ -54,6 +54,8 @@
     "ckeditor": "4.7.3",
     "classlist.js": "1.1.20150312",
     "core-js": "2.5.1",
+    "devextreme": "^17.2.7",
+    "devextreme-angular": "^17.2.7",
     "echarts": "^4.0.2",
     "font-awesome": "4.7.0",
     "intl": "1.2.5",
