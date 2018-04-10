@@ -65,19 +65,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Components',
-    icon: 'nb-gear',
-    children: [
-      {
-        title: 'Tree',
-        link: '/pages/components/tree',
-      }, {
-        title: 'Notifications',
-        link: '/pages/components/notifications',
-      },
-    ],
-  },
-  {
     title: 'Maps',
     icon: 'nb-location',
     children: [
@@ -100,38 +87,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Charts',
-    icon: 'nb-bar-chart',
-    children: [
-      {
-        title: 'Echarts',
-        link: '/pages/charts/echarts',
-      },
-      {
-        title: 'Charts.js',
-        link: '/pages/charts/chartjs',
-      },
-      {
-        title: 'D3',
-        link: '/pages/charts/d3',
-      },
-    ],
-  },
-  {
-    title: 'Editors',
-    icon: 'nb-title',
-    children: [
-      {
-        title: 'TinyMCE',
-        link: '/pages/editors/tinymce',
-      },
-      {
-        title: 'CKEditor',
-        link: '/pages/editors/ckeditor',
-      },
-    ],
-  },
-  {
     title: 'Tables',
     icon: 'nb-tables',
     children: [
@@ -141,13 +96,18 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
-  // {
-  //   title: 'Calendar',
-  //   icon: 'nb-tables',
-  //   link: '/pages/calendar',
-  // },
   {
-    title: 'Auth',
+    title: 'Calendar',
+    icon: 'nb-tables',
+    children: [
+      {
+        title: 'Google Calendar',
+        link: '/pages/calendar/gcalendar',
+      },
+    ],
+  },
+  {
+    title: 'Login',
     icon: 'nb-locked',
     children: [
       {

@@ -10,7 +10,7 @@ import { AnalyticsService } from '../../../@core/utils/analytics.service';
     <label class="theme-switch">
       <span class="light">Light</span>
       <div class="switch">
-        <input type="checkbox" [checked]="currentBoolTheme()" (change)="toggleTheme(theme.checked)" #theme>
+        <input type="checkbox" [checked]="toggleTheme(theme.checked)" (change)="currentBoolTheme()" #theme>
         <span class="slider"></span>
       </div>
       <span class="cosmic">Cosmic</span>
