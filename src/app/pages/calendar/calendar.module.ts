@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { Component, NgModule, ModuleWithProviders } from '@angular/core';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -61,7 +61,7 @@ export class CalendarModule {
     return {
       ngModule: CalendarModule,
       providers: [
-        DraggableHelper,
+        // DraggableHelper,
         config.eventTitleFormatter || CalendarEventTitleFormatter,
         config.dateFormatter || CalendarDateFormatter,
         config.utils || CalendarUtils,
