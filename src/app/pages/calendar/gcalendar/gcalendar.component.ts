@@ -19,22 +19,7 @@ export interface CalendarRequestOptionsArgs extends RequestOptionsArgs {
 @Component({
   selector: 'ngx-gcalendar',
   styleUrls: ['./gcalendar.component.scss'],
-  template: `
-    <dx-scheduler
-      dataSource="dataSource"
-      editing="false"
-      startDateExpr="start.dateTime"
-      endDateExpr="end.dateTime"
-      textExpr="summary"
-      startDayHour="7"
-      timeZone="America/Los_Angeles"
-      showAllDayPanel="false"
-      views='["day", "workWeek", "month"]'
-      currentView="workWeek"
-      currentDate="currentDate"
-      height="500">
-    </dx-scheduler>
-  `,
+  templateUrl: './gcalendar.component.html',
 })
 export class GcalendarComponent {
   dataSource: any;
