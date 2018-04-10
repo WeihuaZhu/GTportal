@@ -3,7 +3,6 @@ import { Http, HttpModule, Response, RequestOptionsArgs } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { DxSchedulerModule } from 'devextreme-angular/ui/scheduler';
-import notify from 'devextreme/ui/notify';
 import 'rxjs/Rx';
 
 import DataSource from 'devextreme/data/data_source';
