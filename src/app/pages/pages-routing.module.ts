@@ -29,11 +29,10 @@ const routes: Routes = [{
   }, {
     path: 'tables',
     loadChildren: './tables/tables.module#TablesModule',
+  }, {
+    path: 'calendar',
+    loadChildren: './calendar/calendar.module#CalendarModule',
   },
-  //   {
-  //   path: 'calendar',
-  //   component: CalendarComponent,
-  // },
     {
     path: '',
     redirectTo: 'dashboard',
