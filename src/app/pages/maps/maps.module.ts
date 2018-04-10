@@ -6,6 +6,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { ThemeModule } from '../../@theme/theme.module';
 import { MapsRoutingModule, routedComponents } from './maps-routing.module';
 
+import { AgmDirectionModule } from 'agm-direction'; 
+
 @NgModule({
   imports: [
     ThemeModule,
@@ -16,6 +18,8 @@ import { MapsRoutingModule, routedComponents } from './maps-routing.module';
     LeafletModule.forRoot(),
     MapsRoutingModule,
     NgxEchartsModule,
+    AgmDirectionModule,
+    
   ],
   exports: [],
   declarations: [
