@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
+import { DxSchedulerModule } from 'devextreme-angular';
 import { CalendarRoutingModule, routedComponents } from './calendar-routing.module';
 
 @NgModule({
@@ -9,6 +10,7 @@ import { CalendarRoutingModule, routedComponents } from './calendar-routing.modu
     ThemeModule,
     CalendarRoutingModule,
     NgxEchartsModule,
+    DxSchedulerModule,
   ],
   exports: [],
   declarations: [
