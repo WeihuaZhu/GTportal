@@ -2,7 +2,7 @@ import { NgModule, Component, Inject, enableProdMode } from '@angular/core';
 import { Http, HttpModule, Response, RequestOptionsArgs } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { DxSchedulerModule } from 'devextreme-angular/ui/scheduler';
+import { DxSchedulerModule } from 'devextreme-angular';
 import 'rxjs/Rx';
 
 import DataSource from 'devextreme/data/data_source';
@@ -19,7 +19,27 @@ export interface CalendarRequestOptionsArgs extends RequestOptionsArgs {
 @Component({
   selector: 'ngx-gcalendar',
   styleUrls: ['./gcalendar.component.scss'],
-  templateUrl: './gcalendar.component.html',
+  template: `
+      <nb-card>
+          <nb-card-header> Google Calendar </nb-card-header>
+          <nb-card-body>
+              <dx-scheduler
+                  [dataSource]="dataSource"
+                  [editing]="false"
+                  startDateExpr="start.dateTime"
+                  endDateExpr="end.dateTime"
+                  textExpr="summary"
+                  [startDayHour]="7"
+                  timeZone="America/Los_Angeles"
+                  [showAllDayPanel]="false"
+                  [views]='["day", "workWeek", "month"]'
+                  currentView="workWeek"
+                  [currentDate]="currentDate"
+                  [height]="500">
+              </dx-scheduler>
+          </nb-card-body>
+      </nb-card>
+  `,
 })
 export class GcalendarComponent {
   dataSource: any;
