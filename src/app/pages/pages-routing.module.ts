@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-// import { CalendarComponent } from './calendar/calendar.component';
+import { NewcalendarComponent } from './newcalendar/newcalendar.component';
 
 const routes: Routes = [{
   path: '',
@@ -23,6 +23,9 @@ const routes: Routes = [{
   }, {
     path: 'calendar',
     loadChildren: './calendar/calendar.module#CalendarModule',
+  }, {
+      path: 'newcalendar',
+      component: NewcalendarComponent,
   },
     {
     path: '',
