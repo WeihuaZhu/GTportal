@@ -18,11 +18,8 @@ const routes: Routes = [{
     path: 'maps',
     loadChildren: './maps/maps.module#MapsModule',
   }, {
-    path: 'forms',
-    loadChildren: './forms/forms.module#FormsModule',
-  }, {
-    path: 'tables',
-    loadChildren: './tables/tables.module#TablesModule',
+    path: 'contact',
+    loadChildren: './contact/forms.module#FormsModule',
   }, {
     path: 'calendar',
     loadChildren: './calendar/calendar.module#CalendarModule',

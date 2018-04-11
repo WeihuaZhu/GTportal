@@ -8,7 +8,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'FEATURES',
+    title: 'Utility',
     group: true,
   },
   {
@@ -51,20 +51,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Forms',
-    icon: 'nb-compose',
-    children: [
-      {
-        title: 'Form Inputs',
-        link: '/pages/forms/inputs',
-      },
-      {
-        title: 'Form Layouts',
-        link: '/pages/forms/layouts',
-      },
-    ],
-  },
-  {
     title: 'Maps',
     icon: 'nb-location',
     children: [
@@ -83,16 +69,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Search Maps',
         link: '/pages/maps/searchmap',
-      },
-    ],
-  },
-  {
-    title: 'ContactUs',
-    icon: 'nb-compose',
-    children: [
-      {
-        title: 'Smart Table',
-        link: '/pages/tables/smart-table',
       },
     ],
   },
@@ -128,4 +104,18 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+    {
+        title: 'Contact Us',
+        icon: 'nb-compose',
+        children: [
+            {
+                title: 'Authors',
+                link: '/pages/contact/inputs',
+            },
+            {
+                title: 'Advice',
+                link: '/pages/contact/layouts',
+            },
+        ],
+    },
 ];
