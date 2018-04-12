@@ -10,7 +10,6 @@ import {SmartTableService} from '../../@core/data/smart-table.service';
 import {SmartTableComponent} from './smart-table/smart-table.component';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
 import { UtilityLinksComponent } from './utility-links/utility-links.component';
-import { CourseComponent } from './course/course.component';
 
 
 @NgModule({
@@ -27,7 +26,6 @@ import { CourseComponent } from './course/course.component';
     TeamComponent,
     SecurityCamerasComponent,
     UtilityLinksComponent,
-    CourseComponent,
   ],
     providers: [
         SmartTableService,

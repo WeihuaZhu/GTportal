@@ -1,23 +1,64 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {NbThemeService} from '@nebular/theme';
 
 @Component({
   selector: 'ngx-utility-links',
   styleUrls: ['./utility-links.component.scss'],
-    template: `
-    <span class="created-by"><b><a href="https://akveo.com" target="_blank"></a></b></span>
-    <div class="socials">
-      <a href="https://github.com/" target="_blank" class="ion ion-social-github"></a><p>Github</p>
-      <a href="https://www.facebook.com/" target="_blank" class="ion ion-social-facebook"></a>
-      <a href="https://twitter.com/Twitter" target="_blank" class="ion ion-social-twitter"></a>
-      <a href="https://www.linkedin.com/" target="_blank" class="ion ion-social-linkedin"></a>
-    </div>
-  `,
+    templateUrl: './utility-links.component.html',
 })
-export class UtilityLinksComponent implements OnInit {
+export class UtilityLinksComponent implements OnDestroy {
 
-  constructor() { }
+    themeName = 'default';
+    settings: Array<any>;
+    themeSubscription: any;
 
-  ngOnInit() {
-  }
+    constructor(private themeService: NbThemeService) {
+        this.themeSubscription = this.themeService.getJsTheme().subscribe(theme => {
+            this.themeName = theme.name;
+            this.init(theme.variables);
+        });
+    }
 
+    Buzzport(): void {
+        window.open('https://buzzport.gatech.edu/');
+    };
+
+    TSquare(): void {
+        window.open('https://t-square.gatech.edu/portal');
+    };
+
+    Github(): void {
+        window.open('https://www.github.com');
+    };
+
+    init(colors: any) {
+        this.settings = [{
+            class: 'https://www.google.com',
+            container: 'primary-container',
+            buttonTitle: 'Course',
+        }, {
+            class: 'btn-hero-warning',
+            container: 'warning-container',
+            title: 'Warning Button',
+            buttonTitle: 'Utility',
+        }, {
+            class: 'btn-hero-success',
+            container: 'success-container',
+            title: 'Success Button',
+            buttonTitle: 'Campus Info',
+        }, {
+            class: 'btn-hero-info',
+            container: 'info-container',
+            buttonTitle: 'Career',
+        }, {
+            class: 'btn-hero-danger',
+            container: 'danger-container',
+            buttonTitle: 'Others',
+        },
+        ];
+    }
+
+    ngOnDestroy() {
+        this.themeSubscription.unsubscribe();
+    }
 }
