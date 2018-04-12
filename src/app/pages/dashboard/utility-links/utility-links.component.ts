@@ -19,6 +19,10 @@ export class UtilityLinksComponent implements OnDestroy {
         });
     }
 
+    Courseoff(): void {
+        window.open('https://gatech.courseoff.com/workspace');
+    };
+
     Buzzport(): void {
         window.open('https://buzzport.gatech.edu/');
     };
@@ -29,6 +33,38 @@ export class UtilityLinksComponent implements OnDestroy {
 
     Github(): void {
         window.open('https://www.github.com');
+    };
+
+    GTGithub(): void {
+        window.open('https://github.gatech.edu/login');
+    };
+
+    Slack(): void {
+        window.open('https://www.slack.com');
+    };
+
+    Stackoverflow(): void {
+        window.open('https://stackoverflow.com');
+    };
+
+    Nextbus(): void {
+        window.open('http://www.nextbus.com/googleMap/?a=georgia-tech');
+    };
+
+    Campusmap(): void {
+        window.open('http://map.gatech.edu/');
+    };
+
+    CRC(): void {
+        window.open('https://crc.gatech.edu/');
+    };
+
+    Library(): void {
+        window.open('http://www.library.gatech.edu/');
+    };
+
+    Dining(): void {
+        window.open('https://gatechdining.com/');
     };
 
     init(colors: any) {
@@ -57,6 +93,10 @@ export class UtilityLinksComponent implements OnDestroy {
         },
         ];
     }
+
+    goToUrl(): void {
+        window.open('https://www.github.com');
+    };
 
     ngOnDestroy() {
         this.themeSubscription.unsubscribe();
