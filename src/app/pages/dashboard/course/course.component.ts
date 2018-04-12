@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 // import {DOCUMENT} from '@angular/platform-browser';
 
 @Component({
