@@ -5,8 +5,6 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 import { DxSchedulerModule } from 'devextreme-angular';
-import { NewcalendarComponent } from './newcalendar/newcalendar.component';
-import { NewgcalendarComponent } from './newcalendar/newgcalendar/newgcalendar.component';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -21,8 +19,6 @@ const PAGES_COMPONENTS = [
   ],
   declarations: [
     ...PAGES_COMPONENTS,
-    NewcalendarComponent,
-    NewgcalendarComponent,
   ],
 })
 export class PagesModule {

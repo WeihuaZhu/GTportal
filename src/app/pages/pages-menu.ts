@@ -82,16 +82,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
-    {
-        title: 'NewCalendar',
-        icon: 'nb-tables',
-        children: [
-            {
-                title: 'New Google Calendar',
-                link: '/pages/newcalendar/newgcalendar',
-            },
-        ],
-    },
   {
     title: 'Login',
     icon: 'nb-locked',
