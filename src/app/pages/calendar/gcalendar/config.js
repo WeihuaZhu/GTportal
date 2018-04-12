@@ -36,8 +36,8 @@ System.config({
     'devextreme-angular': 'npm:devextreme-angular@17.2'
   },
   packages: {
-    'calendar': {
-      main: './gcalendar.component.ts',
+    'app': {
+      main: './app.component.ts',
       defaultExtension: 'ts'
     },
     'devextreme': {
