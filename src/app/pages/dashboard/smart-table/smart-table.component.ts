@@ -30,12 +30,16 @@ export class SmartTableComponent {
             confirmDelete: true,
         },
         columns: {
-            Title: {
-                title: 'Title',
+            Task: {
+                title: 'Task',
                 type: 'string',
             },
-            Url: {
-                title: 'Url',
+            Desc: {
+                title: 'Description',
+                type: 'string',
+            },
+            DeadLine: {
+                title: 'DeadLine',
                 type: 'string',
             },
         },

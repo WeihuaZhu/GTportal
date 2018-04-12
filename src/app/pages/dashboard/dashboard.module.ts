@@ -9,6 +9,7 @@ import { SecurityCamerasComponent } from './security-cameras/security-cameras.co
 import {SmartTableService} from '../../@core/data/smart-table.service';
 import {SmartTableComponent} from './smart-table/smart-table.component';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
+import { UtilityLinksComponent } from './utility-links/utility-links.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {Ng2SmartTableModule} from 'ng2-smart-table';
     ContactsComponent,
     TeamComponent,
     SecurityCamerasComponent,
+    UtilityLinksComponent,
   ],
     providers: [
         SmartTableService,
