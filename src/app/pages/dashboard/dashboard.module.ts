@@ -10,13 +10,14 @@ import {SmartTableService} from '../../@core/data/smart-table.service';
 import {SmartTableComponent} from './smart-table/smart-table.component';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
 import { UtilityLinksComponent } from './utility-links/utility-links.component';
+import { CourseComponent } from './course/course.component';
 
 
 @NgModule({
   imports: [
     ThemeModule,
     NgxEchartsModule,
-      Ng2SmartTableModule,
+    Ng2SmartTableModule,
   ],
   declarations: [
       SmartTableComponent,
@@ -26,6 +27,7 @@ import { UtilityLinksComponent } from './utility-links/utility-links.component';
     TeamComponent,
     SecurityCamerasComponent,
     UtilityLinksComponent,
+    CourseComponent,
   ],
     providers: [
         SmartTableService,

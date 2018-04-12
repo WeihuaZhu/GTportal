@@ -5,6 +5,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 import { DxSchedulerModule } from 'devextreme-angular';
+import {CalendarComponent} from './calendar/calendar.component';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -19,6 +20,7 @@ const PAGES_COMPONENTS = [
   ],
   declarations: [
     ...PAGES_COMPONENTS,
+      CalendarComponent,
   ],
 })
 export class PagesModule {

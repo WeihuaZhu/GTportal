@@ -79,7 +79,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Google Calendar',
         link: '/pages/calendar/gcalendar',
-      },
+      }, {
+            title: 'Courseoff',
+            link: '/pages/calendar/courseoff',
+        },
     ],
   },
   {

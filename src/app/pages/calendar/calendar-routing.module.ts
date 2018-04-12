@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CalendarComponent } from './calendar.component';
 import { GcalendarComponent} from './gcalendar/gcalendar.component';
+import {CourseoffComponent} from './courseoff/courseoff.component';
 
 const routes: Routes = [{
   path: '',
@@ -10,6 +11,9 @@ const routes: Routes = [{
   children: [{
     path: 'gcalendar',
     component: GcalendarComponent,
+  }, {
+      path: 'courseoff',
+      component: CourseoffComponent,
   }],
 }];
 

@@ -4,6 +4,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { ThemeModule } from '../../@theme/theme.module';
 import { DxSchedulerModule } from 'devextreme-angular';
 import { CalendarRoutingModule, routedComponents } from './calendar-routing.module';
+import { CourseoffComponent } from './courseoff/courseoff.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { CalendarRoutingModule, routedComponents } from './calendar-routing.modu
   exports: [],
   declarations: [
     ...routedComponents,
+    CourseoffComponent,
   ],
 })
 export class CalendarModule { }
