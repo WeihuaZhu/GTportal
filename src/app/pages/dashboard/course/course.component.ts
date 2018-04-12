@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {DOCUMENT} from '@angular/platform-browser';
+// import {DOCUMENT} from '@angular/platform-browser';
 
 @Component({
   selector: 'ngx-course',
@@ -8,7 +8,7 @@ import {DOCUMENT} from '@angular/platform-browser';
 })
 export class CourseComponent implements OnInit {
 
-    constructor(@Inject(DOCUMENT) private document: any) { }
+    constructor() { }
 
     ngOnInit() {
     }
