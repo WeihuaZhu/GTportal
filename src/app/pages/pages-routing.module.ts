@@ -33,7 +33,7 @@ const routes: Routes = [{
 },
 {
   path: 'callback',
-  component: CallbackComponent
+  component: CallbackComponent,
 },
 ];
 

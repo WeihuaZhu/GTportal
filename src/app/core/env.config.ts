@@ -9,5 +9,5 @@ const apiURI = _isDev ? 'http://localhost:8083/api/' : `/api/`;
 
 export const ENV = {
   BASE_URI: getHost(),
-  BASE_API: apiURI
+  BASE_API: apiURI,
 };

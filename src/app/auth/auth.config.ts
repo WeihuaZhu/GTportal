@@ -14,5 +14,5 @@ export const AUTH_CONFIG: AuthConfig = {
   CLIENT_DOMAIN: 'gtportal.auth0.com', // e.g., you.auth0.com
   AUDIENCE: 'http://localhost:8083/api/', // e.g., http://localhost:8083/api/
   REDIRECT: `${ENV.BASE_URI}/callback`,
-  SCOPE: 'openid profile'
+  SCOPE: 'openid profile',
 };

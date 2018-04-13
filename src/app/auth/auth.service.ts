@@ -14,7 +14,7 @@ export class AuthService {
     responseType: 'token',
     redirectUri: AUTH_CONFIG.REDIRECT,
     audience: AUTH_CONFIG.AUDIENCE,
-    scope: AUTH_CONFIG.SCOPE
+    scope: AUTH_CONFIG.SCOPE,
   });
   userProfile: any;
   // Create a stream of logged in status to communicate throughout app
@@ -101,5 +101,4 @@ export class AuthService {
     const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return Date.now() < expiresAt;
   }
-
 }

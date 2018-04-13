@@ -14,7 +14,7 @@ import { AuthService } from './auth/auth.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private analytics: AnalyticsService, private auth: AuthService) {
+  constructor(private auth: AuthService, private analytics: AnalyticsService) {
     auth.handleAuth();
   }
 
