@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CallbackComponent } from './callback/callback.component';
 // import { CalendarComponent } from './calendar/calendar.component';
 
 const routes: Routes = [{
@@ -29,7 +30,12 @@ const routes: Routes = [{
     redirectTo: 'dashboard',
     pathMatch: 'full',
   }],
-}];
+},
+{
+  path: 'callback',
+  component: CallbackComponent
+},
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
