@@ -47,6 +47,10 @@ export class UtilityLinksComponent implements OnDestroy {
         window.open('https://stackoverflow.com');
     };
 
+    Canvas(): void {
+        window.open('https://gatech.instructure.com/');
+    };
+
     Nextbus(): void {
         window.open('http://www.nextbus.com/googleMap/?a=georgia-tech');
     };
@@ -65,6 +69,74 @@ export class UtilityLinksComponent implements OnDestroy {
 
     Dining(): void {
         window.open('https://gatechdining.com/');
+    };
+
+    Stingerette(): void {
+        window.open('https://gt-new.ridecell.com/request');
+    };
+
+    Buzzcard(): void {
+        window.open('https://eacct-buzzcard-sp.blackboard.com/buzzcard/AnonymousHome.aspx');
+    };
+
+    LibPrinter(): void {
+        window.open('https://myprintcenter.gatech.edu/');
+    };
+
+    Istart(): void {
+        window.open('https://oie.gatech.edu/isss/istart-help');
+    };
+
+    OnCampusJob(): void {
+        window.open('https://studentcenter.gatech.edu/campus-jobs');
+    };
+
+    GTbuses(): void {
+        window.open('http://www.nextbus.com/googleMap/?a=georgia-tech&r=trolley&d=marta&s=centrstud');
+    };
+
+    CareerBuzz(): void {
+        window.open('https://gatech-csm.symplicity.com/');
+    };
+
+    PiazzaCareers(): void {
+        window.open('https://gatech-csm.symplicity.com/');
+    };
+
+    CocJobBoard(): void {
+        window.open('https://www.cc.gatech.edu/about/jobs');
+    };
+
+    AngelList(): void {
+        window.open('https://angel.co/jobs');
+    };
+
+    AtlantaTechVillage(): void {
+        window.open('http://atlantatechvillage.com/about-us/job-board/');
+    };
+
+    LinkedIn(): void {
+        window.open('https://www.linkedin.com/');
+    };
+
+    Indeed(): void {
+        window.open('https://www.indeed.com/');
+    };
+
+    Glassdoor(): void {
+        window.open('https://www.glassdoor.com/');
+    };
+
+    CareerCup(): void {
+        window.open('https://www.careercup.com/');
+    };
+
+    RateMyProfessor(): void {
+        window.open('http://www.ratemyprofessors.com/');
+    };
+    
+    Piazza(): void {
+        window.open('https://piazza.com/');
     };
 
     init(colors: any) {
