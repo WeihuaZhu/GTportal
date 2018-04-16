@@ -22,8 +22,8 @@ const routes: Routes = [{
     path: 'contact',
     loadChildren: './contact/forms.module#FormsModule',
   }, {
-    path: 'calendar',
-    loadChildren: './calendar/calendar.module#CalendarModule',
+    path: 'cal',
+    loadChildren: './cal/cal.module#CalModule',
   },
     {
     path: '',
