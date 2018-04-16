@@ -78,11 +78,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Google Calendar',
-        link: '/pages/calendar/gcalendar',
-      }, {
-            title: 'Courseoff',
-            link: '/pages/calendar/courseoff',
-        },
+        link: '/pages/cal/gcalendar',
+      },
+      {
+        title: 'Courseoff',
+        link: '/pages/cal/courseoff',
+      },
     ],
   },
   {

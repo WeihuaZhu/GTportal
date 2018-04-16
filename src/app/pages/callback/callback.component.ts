@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'callback',
+  selector: 'ngx-callback',
   templateUrl: './callback.component.html',
   styleUrls: ['./callback.component.scss'],
 })

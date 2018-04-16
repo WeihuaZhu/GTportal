@@ -134,7 +134,7 @@ export class UtilityLinksComponent implements OnDestroy {
     RateMyProfessor(): void {
         window.open('http://www.ratemyprofessors.com/');
     };
-    
+
     Piazza(): void {
         window.open('https://piazza.com/');
     };
