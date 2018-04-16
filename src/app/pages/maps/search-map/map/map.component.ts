@@ -15,7 +15,7 @@ export class MapComponent implements OnInit {
   public set searchedLocation(searchedLocation: Location) {
     this.latitude = searchedLocation.latitude;
     this.longitude = searchedLocation.longitude;
-    this.zoom = 12;
+    this.zoom = 15;
   }
 
   ngOnInit(): void {

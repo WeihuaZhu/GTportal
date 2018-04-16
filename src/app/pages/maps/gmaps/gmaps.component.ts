@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
       <nb-card-body>
       <button type="button" (click)="getDirection()">Get</button>
         <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="onChoseLocation($event)">
-          <agm-direction *ngIf="dirChosen" [origin]="dir.origin" [destination]="dir.destination"></agm-direction>
+          <agm-direction *ngIf="dirChosen" [travelMode]="dir.travelMode" [origin]="dir.origin" [destination]="dir.destination"></agm-direction>
 
           <agm-marker
               [latitude]="lat"
@@ -30,8 +30,12 @@ export class GmapsComponent {
   lat = 33.7756178;
   lng = -84.3962850;
   locationChosen = false;
+  templat = undefined;
+  templng = undefined;
 
   onChoseLocation(event) {
+    this.templat = this.lat;
+    this.templng = this.lng;
     this.lat = event.coords.lat;
     this.lng = event.coords.lng;
     this.locationChosen = true;
@@ -41,8 +45,9 @@ export class GmapsComponent {
   dirChosen = false;
   getDirection() {
     this.dir = {
-      origin: { lat: 33.7756178, lng: -84.3962850 },
-      destination: { lat: 33.7800181, lng: -84.3939401 },
+      origin: { lat: this.templat, lng: this.templng },
+      destination: { lat: this.lat, lng: this.lng },
+      travelMode: 'WALKING',
     }
     this.dirChosen = true;
   }
