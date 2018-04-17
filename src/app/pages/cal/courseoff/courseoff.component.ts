@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 @Component({
     selector: 'ngx-courseoff',
     templateUrl: './courseoff.component.html',
@@ -12,6 +12,7 @@ export class CourseoffComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
+        window.open('https://gatech.courseoff.com/workspace');
     }
 
     goToCourseoff(): void {
