@@ -86,6 +86,20 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+    {
+        title: 'Task',
+        icon: 'nb-edit',
+        children: [
+            {
+                title: 'Task Management',
+                link: '/pages/task/taskm',
+            },
+            // {
+            //     title: 'Courseoff',
+            //     link: '/pages/cal/courseoff',
+            // },
+        ],
+    },
   {
     title: 'Login',
     icon: 'nb-locked',
