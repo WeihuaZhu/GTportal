@@ -1,7 +1,7 @@
 <nb-card>
   <nb-card-header>Google Map with Search</nb-card-header>
   <nb-card-body>
-      <button type="button" (click)="getDirection()">Get Navigation</button>
+    <ngx-search (positionChanged)="updateLocation($event)"></ngx-search>
     <ngx-search (positionChanged)="updateLocation($event)"></ngx-search>
     <ngx-map [searchedLocation]="searchedLocation"></ngx-map>
   </nb-card-body>

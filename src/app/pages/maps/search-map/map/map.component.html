@@ -1,7 +1,10 @@
+<button type="button" (click)="getDirection()">Get Navigation</button>
 <agm-map [latitude]="latitude"
          [longitude]="longitude"
          [scrollwheel]="false"
          [zoom]="zoom">
   <agm-marker [latitude]="latitude"
               [longitude]="longitude"></agm-marker>
+  <agm-direction  [travelMode]="dir.travelMode" [origin]="dir.origin" [destination]="dir.destination"></agm-direction>
+
 </agm-map>

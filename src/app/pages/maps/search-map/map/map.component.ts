@@ -7,12 +7,18 @@ import { Location } from '../entity/Location';
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnInit {
+  
   latitude: number;
   longitude: number;
   zoom: number;
+  dir = undefined;
+  templat = undefined;
+  templnt = undefined;
 
   @Input()
   public set searchedLocation(searchedLocation: Location) {
+    this.templat = this.latitude;
+    this.templnt = this.longitude;
     this.latitude = searchedLocation.latitude;
     this.longitude = searchedLocation.longitude;
     this.zoom = 15;
@@ -28,4 +34,14 @@ export class MapComponent implements OnInit {
       });
     }
   }
+
+  getDirection() {
+    this.dir = {
+      origin: { lat: this.templat, lng: this.templnt },
+      destination: { lat: this.latitude, lng: this.longitude },
+      travelMode: 'WALKING',
+    }
+    
+  }
+
 }
