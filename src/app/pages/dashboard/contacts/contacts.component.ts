@@ -41,7 +41,7 @@ export class ContactsComponent implements OnInit, OnDestroy {
         ];
 
         this.recent = [
-          {user: users.alan, type: 'home', time: '9:12 pm'},
+          {user: users.nick, type: 'home', time: '9:12 pm'},
           {user: users.eva, type: 'home', time: '7:45 pm'},
           {user: users.nick, type: 'mobile', time: '5:29 pm'},
           {user: users.lee, type: 'mobile', time: '11:24 am'},
