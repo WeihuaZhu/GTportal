@@ -9,6 +9,11 @@ export class GcalendarComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
+        window.open('https://calendar.google.com/calendar/r/month');
+    }
+
+    goToCalendar(): void {
+        window.open('https://calendar.google.com/calendar/r/month');
     }
 
 }

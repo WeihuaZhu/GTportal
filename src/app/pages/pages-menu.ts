@@ -58,10 +58,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Google Maps',
         link: '/pages/maps/gmaps',
       },
-      // {
-      //   title: 'Leaflet Maps',
-      //   link: '/pages/maps/leaflet',
-      // },
+      {
+        title: 'Campus Maps',
+        link: '/pages/maps/gtmap',
+      },
       // {
       //   title: 'Bubble Maps',
       //   link: '/pages/maps/bubble',
