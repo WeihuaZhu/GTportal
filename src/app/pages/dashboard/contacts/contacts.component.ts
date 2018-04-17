@@ -32,23 +32,23 @@ export class ContactsComponent implements OnInit, OnDestroy {
     this.userService.getUsers()
       .subscribe((users: any) => {
         this.contacts = [
-          {user: users.nick, type: 'mobile'},
-          {user: users.eva, type: 'home'},
-          {user: users.jack, type: 'mobile'},
-          {user: users.lee, type: 'mobile'},
-          {user: users.alan, type: 'home'},
-          {user: users.kate, type: 'work'},
+          {user: users.nick, type: 'president', email: 'president@gatech.edu'},
+          {user: users.eva, type: 'classmate', email: 'president@gatech.edu'},
+          {user: users.jack, type: 'classmate', email: 'donald@gmail.com'},
+          {user: users.lee, type: 'classmate', email: 'donald@gmail.com'},
+          {user: users.alan, type: 'classmate', email: 'donald@gmail.com'},
+          {user: users.kate, type: 'professor', email: 'mailto:president@gatech.edu'},
         ];
 
         this.recent = [
-          {user: users.nick, type: 'home', time: '9:12 pm'},
-          {user: users.eva, type: 'home', time: '7:45 pm'},
-          {user: users.nick, type: 'mobile', time: '5:29 pm'},
-          {user: users.lee, type: 'mobile', time: '11:24 am'},
-          {user: users.jack, type: 'mobile', time: '10:45 am'},
-          {user: users.kate, type: 'work', time: '9:42 am'},
-          {user: users.kate, type: 'work', time: '9:31 am'},
-          {user: users.jack, type: 'mobile', time: '8:01 am'},
+          {user: users.nick, type: 'president', time: '9:12 pm'},
+          {user: users.eva, type: 'classmate', time: '7:45 pm'},
+          {user: users.nick, type: 'classmate', time: '5:29 pm'},
+          {user: users.lee, type: 'classmate', time: '11:24 am'},
+          {user: users.jack, type: 'classmate', time: '10:45 am'},
+          {user: users.kate, type: 'professor', time: '9:42 am'},
+          {user: users.kate, type: 'professor', time: '9:31 am'},
+          {user: users.jack, type: 'classmate', time: '8:01 am'},
         ];
       });
   }

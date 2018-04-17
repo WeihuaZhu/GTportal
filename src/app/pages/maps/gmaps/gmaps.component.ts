@@ -9,11 +9,12 @@ import { Component } from '@angular/core';
   template: `
 
     <nb-card>
-      <nb-card-header> GT Campus Map </nb-card-header>
+      <nb-card-header> Google Map </nb-card-header>
       <nb-card-body>
       <button type="button" (click)="getDirection()">Get</button>
         <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="onChoseLocation($event)">
-          <agm-direction *ngIf="dirChosen" [travelMode]="dir.travelMode" [origin]="dir.origin" [destination]="dir.destination"></agm-direction>
+          <agm-direction *ngIf="dirChosen" [travelMode]="dir.travelMode"
+                         [origin]="dir.origin" [destination]="dir.destination"></agm-direction>
 
           <agm-marker
               [latitude]="lat"

@@ -4,6 +4,7 @@ import { Location } from './entity/Location';
 @Component({
   selector: 'ngx-search-map',
   templateUrl: './search-map.component.html',
+  styleUrls: ['./search-map.component.scss'],
 })
 export class SearchMapComponent {
 

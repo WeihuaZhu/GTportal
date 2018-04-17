@@ -2,9 +2,9 @@
 
 @include nb-install-component() {
 
-  nb-card-body {
-    padding: 0;
-  }
+    nb-card-body {
+        padding: nb-theme(card-padding) 0 0 0;
+    }
 
   /deep/ agm-map {
     width: 100%;
