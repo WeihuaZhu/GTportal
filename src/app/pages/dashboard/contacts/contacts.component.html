@@ -3,7 +3,8 @@
     <nb-tab tabTitle="Contacts">
       <div class="contact" *ngFor="let c of contacts">
         <nb-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="large"></nb-user>
-        <i class="i-contact nb-email"></i><span><a href="mailto:president@gatech.edu">Send</a></span>
+        <i class="i-contact nb-email"></i>
+          <span><a href="mailto:president@gatech.edu">Send</a></span>
       </div>
     </nb-tab>
     <nb-tab tabTitle="Recent">

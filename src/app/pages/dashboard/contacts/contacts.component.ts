@@ -34,10 +34,10 @@ export class ContactsComponent implements OnInit, OnDestroy {
         this.contacts = [
           {user: users.nick, type: 'president', email: 'president@gatech.edu'},
           {user: users.eva, type: 'classmate', email: 'president@gatech.edu'},
-          {user: users.jack, type: 'classmate', email: 'donald@gmail.com'},
+          {user: users.kate, type: 'professor', email: 'donald@gmail.com'},
           {user: users.lee, type: 'classmate', email: 'donald@gmail.com'},
           {user: users.alan, type: 'classmate', email: 'donald@gmail.com'},
-          {user: users.kate, type: 'professor', email: 'mailto:president@gatech.edu'},
+          {user: users.jack, type: 'classmate', email: 'mailto:president@gatech.edu'},
         ];
 
         this.recent = [
