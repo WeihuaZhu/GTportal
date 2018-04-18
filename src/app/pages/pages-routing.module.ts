@@ -26,7 +26,7 @@ const routes: Routes = [{
     loadChildren: './cal/cal.module#CalModule',
   }, {
       path: 'task',
-      loadChildren: './task/task.module#TaskModule',
+      loadChildren: './task/tables.module#TablesModule',
   },
     {
     path: '',

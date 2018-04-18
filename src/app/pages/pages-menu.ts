@@ -55,10 +55,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-location',
     children: [
       {
-        title: 'Google Maps',
-        link: '/pages/maps/gmaps',
-      },
-      {
         title: 'Campus Maps',
         link: '/pages/maps/gtmap',
       },
@@ -67,7 +63,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       //   link: '/pages/maps/bubble',
       // },
       {
-        title: 'Search Maps',
+        title: 'Google Maps',
         link: '/pages/maps/searchmap',
       },
     ],
@@ -92,7 +88,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
         children: [
             {
                 title: 'Task Management',
-                link: '/pages/task/taskm',
+                link: '/pages/task/smart-table',
             },
             // {
             //     title: 'Courseoff',
