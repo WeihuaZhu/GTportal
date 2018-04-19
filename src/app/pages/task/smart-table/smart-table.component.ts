@@ -30,29 +30,25 @@ export class SmartTableComponent {
       confirmDelete: true,
     },
     columns: {
-      id: {
-        title: 'ID',
+      priority: {
+        title: 'Priority',
         type: 'number',
       },
-      firstName: {
-        title: 'First Name',
+      task: {
+        title: 'Task',
         type: 'string',
       },
-      lastName: {
-        title: 'Last Name',
+      note: {
+        title: 'Note',
         type: 'string',
       },
-      username: {
-        title: 'Username',
-        type: 'string',
+      deadline: {
+        title: 'Deadline',
+        type: 'date',
       },
-      email: {
-        title: 'E-mail',
+      place: {
+        title: 'Place',
         type: 'string',
-      },
-      age: {
-        title: 'Age',
-        type: 'number',
       },
     },
   };
