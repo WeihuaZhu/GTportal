@@ -44,7 +44,7 @@ export class SmartTableComponent {
       },
       deadline: {
         title: 'Deadline',
-        type: 'date',
+        type: 'string',
       },
       place: {
         title: 'Place',
